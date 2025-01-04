@@ -1,1 +1,3 @@
-# TODO Make this a proper lib so I can link it to things.
+file(GLOB_RECURSE IMGUI_SOURCES CONFIGURE_DEPENDS
+     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+add_library(imgui IMGUI_SOURCES)

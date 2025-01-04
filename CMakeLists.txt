@@ -1,10 +1,14 @@
 cmake_minimum_required(VERSION 3.16..3.28)
-project(MiWaK VERSION 0.0.1
-              DESCRIPTION "MiddleWare for games"
-              LANGUAGES CXX)
+project(
+  MiWaK
+  VERSION 0.0.1
+  DESCRIPTION "MiddleWare for games"
+  LANGUAGES CXX)
 
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
+  set(CMAKE_BUILD_TYPE
+      Release
+      CACHE STRING "" FORCE)
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -17,5 +21,4 @@ target_include_directories(cxx_setup INTERFACE "${PROJECT_SOURCE_DIR}/include")
 
 add_subdirectory(libs)
 
-add_executable(${PROJECT_NAME} apps/main.cpp apps/imgui/example.cpp)
-
+add_executable(${PROJECT_NAME} apps/main.cpp)
