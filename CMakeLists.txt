@@ -6,6 +6,8 @@ project(MiWaK VERSION 0.0.1
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
 endif()
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 
 add_library(cxx_setup INTERFACE)
@@ -15,5 +17,5 @@ target_include_directories(cxx_setup INTERFACE "${PROJECT_SOURCE_DIR}/include")
 
 add_subdirectory(libs)
 
-add_executable(${PROJECT_NAME} apps/main.cpp)
+add_executable(${PROJECT_NAME} apps/main.cpp apps/imgui/example.cpp)
 
