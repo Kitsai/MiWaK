@@ -17,8 +17,8 @@ message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 add_library(cxx_setup INTERFACE)
 target_compile_options(cxx_setup INTERFACE -Wall -Wpedantic -Wextra)
 target_compile_features(cxx_setup INTERFACE cxx_std_17)
-target_include_directories(cxx_setup INTERFACE "${PROJECT_SOURCE_DIR}/include")
 
 add_subdirectory(libs)
-
-add_executable(${PROJECT_NAME} apps/main.cpp)
+add_subdirectory(core)
+add_subdirectory(engine)
+add_subdirectory(visual)

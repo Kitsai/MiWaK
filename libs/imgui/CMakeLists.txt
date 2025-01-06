@@ -1,3 +1,3 @@
-file(GLOB_RECURSE IMGUI_SOURCES CONFIGURE_DEPENDS
-     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
-add_library(imgui IMGUI_SOURCES)
+file(GLOB_RECURSE imgui_SRC CONFIGURE_DEPENDS "*.cpp")
+
+add_library(imgui ${imgui_SRC})
